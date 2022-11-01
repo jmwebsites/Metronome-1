@@ -6,10 +6,12 @@ const startStopBtn = document.querySelector('.start-stop');
 const click1 = new Audio('click1.mp3');
 const click2 = new Audio('click2.mp3');
 
-let bpm = 140;
+let bpm = 190;
 let beatsPerMeasure = 4;
 let count = 0;
 let isRunning = false;
+
+tempoDisplay.textContent = bpm;
 
 startStopBtn.addEventListener('click', () => {
     count = 0;
@@ -23,11 +25,6 @@ startStopBtn.addEventListener('click', () => {
         startStopBtn.textContent = 'START';
     }
 });
-
-function updateMetronome() {
-    tempoDisplay.textContent = bpm;
-    metronome.timeInterval = 60000 / bpm;
-}
 
 function playClick() {
     console.log(count);
